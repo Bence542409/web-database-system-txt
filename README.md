@@ -1,4 +1,6 @@
 # web-txt-database-system
+<p>Suitable for storage use</p>
+<br />
 <p>Built by me and ChatGPT.</p>
 <br />
 <p>This program allows you to:</p>
