@@ -28,11 +28,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($found) {
-            file_put_contents($file, implode("\n", $newLines));
-            $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító sikeresen törölve (ID: {$deleteId})"];
-        } else {
-            $_SESSION['msg'] = ['type' => 'error', 'text' => "Nem létezik a megadott azonosítószám"];
-        }
+    file_put_contents($file, implode("\n", $newLines));
+
+    // --- QR kód törlése, ha létezik ---
+    $qrDir = __DIR__ . "/barcode/";
+    $qrFile = $qrDir . str_pad($deleteId, 4, "0", STR_PAD_LEFT) . ".png"; 
+    if (file_exists($qrFile)) {
+        unlink($qrFile);
+    }
+
+    $_SESSION['msg'] = [
+        'type' => 'success',
+        'text' => "Azonosító sikeresen törölve (ID: {$deleteId})"
+    ];
+} else {
+    $_SESSION['msg'] = [
+        'type' => 'error',
+        'text' => "Nem létezik a megadott azonosítószám"];
+}
+
     }
 
     $_SESSION['redirect'] = true;
