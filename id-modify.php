@@ -200,7 +200,7 @@ if (isset($_POST['modify'])) {
 
         <form method="post" id="modifyForm">
             <label for="modify_id">Azonosító:</label>
-            <input type="text" id="modify_id" name="modify_id" autocomplete="off">
+            <input type="text" id="modify_id" name="modify_id" autocomplete="off" inputmode="numeric" pattern="[0-9]*">
 
             <label for="tartalom">Tárolóban található elemek:</label>
             <input type="text" id="tartalom" name="tartalom">

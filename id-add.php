@@ -68,12 +68,22 @@ if (isset($_POST['upload_btn']) && isset($_SESSION['new_id'])) {
 
         move_uploaded_file($tmpName, $destFile);
 
-        $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító és kép sikeresen hozzáadva (ID: {$uploadId})"];
+        $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító sikeresen hozzáadva (ID: {$uploadId})"];
         unset($_SESSION['new_id']); // Töröljük a jelzőt
     } else {
         $_SESSION['msg'] = ['type' => 'error', 'text' => "Kép feltöltése sikertelen"];
     }
 }
+
+// --- KÉP FELTÖLTÉS KIHAGYÁSA ---
+if (isset($_POST['skip_btn']) && isset($_SESSION['new_id'])) {
+    $skipId = $_SESSION['new_id'];
+    $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító sikeresen hozzáadva (ID: {$skipId})"];
+    unset($_SESSION['new_id']);
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -180,11 +190,12 @@ if (isset($_POST['upload_btn']) && isset($_SESSION['new_id'])) {
         <div class="container">
             <h1>Azonosító hozzáadása</h1>
             <?php if (isset($_SESSION['new_id'])): ?>
-                <div class="next-id">Kép feltöltése ehhez az ID-hez: <?php echo $_SESSION['new_id']; ?></div>
+                <div class="next-id">Kép feltöltése tárolóhoz: <?php echo $_SESSION['new_id']; ?></div>
                 <form method="post" enctype="multipart/form-data">
                     <label for="picture">Válassz képet:</label>
                     <input type="file" id="picture" name="picture" accept="image/*">
                     <button type="submit" name="upload_btn">Kép feltöltése</button>
+                    <button type="submit" name="skip_btn" style="background:#cc0000;">Mégsem</button>
                 </form>
             <?php else: ?>
                 <div class="next-id">Tároló azonosítója: <?php echo $newIdFormatted; ?></div>
@@ -210,5 +221,16 @@ if (isset($_POST['upload_btn']) && isset($_SESSION['new_id'])) {
             <?php unset($_SESSION['msg']); ?>
         <?php endif; ?>
     </div>
+    <script>
+    // üzenet eltüntetése 2 másodperc után
+    setTimeout(() => {
+        const msg = document.querySelector('.msg');
+        if (msg) {
+            msg.style.transition = "opacity 0.5s";
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 500); // végleg eltávolítja
+        }
+    }, 2000);
+</script>
 </body>
 </html>

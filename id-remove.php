@@ -36,6 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (file_exists($qrFile)) {
         unlink($qrFile);
     }
+            
+    // --- kép törlése, ha létezik ---
+    $qrDir = __DIR__ . "/picture/";
+    $qrFile = $qrDir . str_pad($deleteId, 4, "0", STR_PAD_LEFT) . ".png"; 
+    if (file_exists($qrFile)) {
+        unlink($qrFile);
+    }
 
     $_SESSION['msg'] = [
         'type' => 'success',
@@ -49,9 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    $_SESSION['redirect'] = true;
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -152,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Azonosító törlése</h1>
             <form method="post">
                 <label for="delete_id">Azonosító:</label>
-                <input type="text" id="delete_id" name="delete_id">
+                <input type="text" id="delete_id" name="delete_id" inputmode="numeric" pattern="[0-9]*">
                 <button type="submit">Azonosító törlése</button>
             </form>
         </div>
@@ -173,5 +177,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </script>
         <?php unset($_SESSION['redirect']); ?>
     <?php endif; ?>
+    <script>
+    // üzenet eltüntetése 2 másodperc után
+    setTimeout(() => {
+        const msg = document.querySelector('.msg');
+        if (msg) {
+            msg.style.transition = "opacity 0.5s";
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 500); // végleg eltávolítja
+        }
+    }, 2000);
+</script>
+
 </body>
 </html>
