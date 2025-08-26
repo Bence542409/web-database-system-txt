@@ -9,4 +9,5 @@
 </ul>
 <br />
 <p>The records must be stored in a txt file in the same directory on a web server.</p>
+<p>There are ten records added as an example.</p>
 <p>The id.txt file works with my <a href="https://github.com/Bence542409/c-database-system">C# database system</a>.</p>
