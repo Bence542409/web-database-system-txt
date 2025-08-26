@@ -1,0 +1,484 @@
+0001
+gipszkarton csavarok
+DOBOZ
+POLC1
+0002
+[NINCS INFORMÁCIÓ]
+DOBOZ
+POLC1
+0003
+toldó; gömbcsap; bilincs
+DOBOZ
+POLC1
+0004
+szögek
+DOBOZ
+POLC1
+0005
+pika kerékcsavarok
+DOBOZ
+POLC1
+0006
+hegyes gipszkarton csavarok; függöny csipesz
+DOBOZ
+POLC1
+0007
+suzuki kerékcsavarok
+DOBOZ
+POLC1
+0008
+lemezcsavarok
+DOBOZ
+POLC1
+0009
+10 -es és 8 -as anya csavar és alátét [RENDSZEREZÉSRE SZORUL "TOLDÓK" ÉS "BILINCS" AT 0003]
+DOBOZ
+POLC1
+0010
+hilti szögek; lemezcsavarok [RENDSZEREZÉSRE SZORUL "LEMEZCSAVAROK" AT 0008]
+DOBOZ
+POLC1
+0011
+menetmetsző; menetfúró
+DOBOZ
+POLC1
+0012
+műanyag tipli; lemezcsvar; anyacsavar [RENDSZEREZÉSRE SZORUL "LEMEZCSAVAROK" AT 0008]
+DOBOZ
+POLC1
+0013
+műanyag tipli; lemezcsavar [RENDSZEREZÉSRE SZORUL "LEMEZCSAVAROK" AT 0008]
+DOBOZ
+POLC1
+0014
+csőszerelés
+DOBOZ
+POLC1
+0015
+karton csavar; konyha szekrény fogantyú (1)
+DOBOZ
+POLC1
+0016
+[ÜRES]
+DOBOZ
+POLC1
+0017
+[ÜRES]
+DOBOZ
+POLC1
+0018
+[ÜRES]
+DOBOZ
+POLC1
+0019
+[ÜRES]
+DOBOZ
+POLC1
+0020
+[ÜRES]
+DOBOZ
+POLC1
+0021
+suzuki gyertya; tartalék égő; elem
+DOBOZ
+POLC1
+0022
+[ÜRES]
+DOBOZ
+POLC1
+0023
+[ÜRES]
+DOBOZ
+POLC1
+0024
+műanyag dűbel
+DOBOZ
+POLC1
+0025
+vegyes facsavarok
+DOBOZ
+POLC1
+0026
+flex (2)
+LÁDA
+POLC2
+0027
+ütvefúró (2)
+LÁDA
+POLC3
+0028
+digitális tolómérő; digitális multiméter; lámpás nagyító; blankoló fogó; nyomatékkulcs (2); krovakészlet; csapágylehúzó; csavarhúzókészlet; zsugorcső
+LÁDA
+POLC2
+0029
+dekopír fűrész; csiszoló/vágó korong; drótkorong; 30m mérőszallag; sövényvágó; kefék; elektróda
+LÁDA
+POLC3
+0030
+festool akkumlátoros csavarhúzó
+LÁDA
+PAD
+0031
+krovakészlet (krova, imbusz, torx)
+LÁDA
+PAD
+0032
+makita csavarhúzógép (2)
+TÁSKA
+POLC3
+0033
+kőműves felszerelések; fűrész; vágó; kalapács; festő dolgok
+LÁDA
+SATUPAD
+0034
+suzuki tanksapka; suzuki led; csiszoló korong; hosszabító alkatrészek; szekrényajtó kivető pántok
+LÁDA
+SATUPAD
+0035
+hullám palacsavarok; kipufogó rugók
+LÁDA
+SATUPAD
+0036
+kábel csupaszoló; mérőszallagok; vegyes csavarok
+LÁDA
+SATUPAD
+0037
+makita gépek; papó fúrógépe
+LÁDA
+POLC2
+0038
+forrasztópáka
+LÁDA
+POLC2
+0039
+kábelkötegelő; opel vivaro gyújtótrafó (nincs itt)
+DOBOZ
+POLC2
+0040
+hyundai ütvecsavarozó
+LÁDA
+POLC2
+0041
+kenőzsír
+LÁDA
+SATUPAD
+0042
+lézer; hajszárító, fúrógépek
+LÁDA
+SATUPAD
+0043
+kemping gáztűzhely
+LÁDA
+SATUPAD
+0044
+cső vágó; kender; favéső; dobozmaró; fűrészlap; wc tartály alkatrész; kalapács; hőlégfúvó
+LÁDA
+SATUPAD
+0045
+fúrókalapács
+LÁDA
+SATUPAD
+0046
+akkumlátoros szerszám készlet (dekopír, csiszoló, csavarbehajtó)
+LÁDA
+SATUPAD
+0047
+csavarok
+LÁDA
+SATUPAD
+0048
+bikakábel
+LÁDA
+SATUPAD
+0049
+vidia fúrószárak
+LÁDA
+POLC2
+0050
+aligátor fűrész
+DOBOZ
+POLC2
+0051
+kerékcsavarok
+DOBOZ
+[NINCS INFORMÁCIÓ]
+0052
+műanyag patent csavarok
+DOBOZ
+[NINCS INFORMÁCIÓ]
+0053
+[ÜRES]
+DOBOZ
+[NINCS INFORMÁCIÓ]
+0054
+[ÜRES]
+DOBOZ
+[NINCS INFORMÁCIÓ]
+0055
+elsősegély doboz
+DOBOZ
+[NINCS INFORMÁCIÓ]
+0056
+parkside akkumulátoros racsni
+LÁDA
+POLC2
+0057
+hyundai láncfűrész
+LÁDA
+POLC2
+0058
+parkside merülő fűrész (jó)
+LÁDA
+POLC2
+0059
+parkside merülő fűrész (rossz)
+LÁDA
+POLC2
+0060
+parkside akkumulátoros kerékkulcs
+LÁDA
+POLC2
+0061
+[NINCS INFORMÁCIÓ]
+VÖDÖR
+POLC2
+0062
+[NINCS INFORMÁCIÓ]
+VÖDÖR
+POLC2
+0063
+makita csavarhúzó (replika)
+LÁDA
+POLC2
+0064
+kis krovakészlet
+DOBOZ
+POLC2
+0065
+elektromos nyomaték adapter
+DOBOZ
+POLC2
+0066
+kis krovakészlet
+DOBOZ
+POLC2
+0067
+olajszivattyú
+DOBOZ
+POLC2
+0068
+multi detektor
+DOBOZ
+POLC2
+0069
+ultrahangos távolságmérő
+DOBOZ
+POLC2
+0070
+kábel blankoló/préselő
+DOBOZ
+POLC2
+0071
+késélező
+DOBOZ
+POLC2
+0072
+csőmenet metsző
+LÁDA
+POLC2
+0073
+hólánc
+LÁDA
+POLC2
+0074
+[NINCS INFORMÁCIÓ]
+LÁDA
+SATUPAD
+0075
+csőbilincsek
+DOBOZ
+SATUPAD
+0076
+[ÜRES]
+FIÓK
+SATUPOLC
+0077
+[ÜRES]
+FIÓK
+SATUPOLC
+0078
+[ÜRES]
+FIÓK
+SATUPOLC
+0079
+[ÜRES]
+FIÓK
+SATUPOLC
+0080
+[ÜRES]
+FIÓK
+SATUPOLC
+0081
+[ÜRES]
+FIÓK
+SATUPOLC
+0082
+[ÜRES]
+FIÓK
+SATUPOLC
+0083
+[ÜRES]
+FIÓK
+SATUPOLC
+0084
+panelszög
+FIÓK
+SATUPOLC
+0085
+kábeltartó
+FIÓK
+SATUPOLC
+0086
+[ÜRES]
+FIÓK
+SATUPOLC
+0087
+[ÜRES]
+FIÓK
+SATUPOLC
+0088
+ragasztók
+FIÓK
+SATUPOLC
+0089
+kábelkötegelő
+FIÓK
+SATUPOLC
+0090
+mérőszallagok
+FIÓK
+SATUPOLC
+0091
+teflon szallag; tükör; filcek
+FIÓK
+SATUPOLC
+0092
+yamaha kábelköteg, helyzetjelző
+FIÓK
+SATUPOLC
+0093
+autós biztosítékok; fázisceruza
+FIÓK
+SATUPOLC
+0094
+féklámpa izzó; gombelem
+FIÓK
+SATUPOLC
+0095
+[ÜRES]
+FIÓK
+SATUPOLC
+0096
+[ÜRES]
+FIÓK
+SATUPOLC
+0097
+[ÜRES]
+FIÓK
+SATUPOLC
+0098
+[ÜRES]
+FIÓK
+SATUPOLC
+0099
+[ÜRES]
+FIÓK
+SATUPOLC
+0100
+[ÜRES]
+FIÓK
+SATUPOLC
+0101
+tőmítések; csavarok
+FIÓK
+SATUPOLC
+0102
+[NINCS INFORMÁCIÓ]
+FIÓK
+SATUPOLC
+0103
+kartonkés/szkarper; szigetelőszallag; tömítőpaszta
+FIÓK
+SATUPOLC
+0104
+szárnyas anyák; bitkészlet
+FIÓK
+SATUPOLC
+0105
+[ÜRES]
+FIÓK
+SATUPOLC
+0106
+olajleeresztő csavarok
+FIÓK
+SATUPOLC
+0107
+flex anyacsavar
+FIÓK
+SATUPOLC
+0108
+csapágygolyók
+FIÓK
+SATUPOLC
+0109
+[ÜRES]
+FIÓK
+SATUPOLC
+0110
+tokmánykulcs
+FIÓK
+SATUPOLC
+0111
+[ÜRES]
+FIÓK
+SATUPOLC
+0112
+[ÜRES]
+FIÓK
+SATUPOLC
+0113
+matricák
+FIÓK
+SATUPOLC
+0114
+parkside akkumulátoros sarokcsiszoló
+LÁDA
+POLC3
+0115
+heggesztő trafó
+TÁSKA
+POLC3
+0116
+védőszemüvegek; motor égő; légpuska töltény
+SZEKRÉNY
+FAL
+0117
+[NINCS INFORMÁCIÓ]
+LÁDA
+PAD
+0118
+akkumulátor töltő
+DOBOZ
+POLC2
+0119
+gérvágó fűrész
+[NINCS]
+PAD
+0120
+festool merülő fűrész
+LÁDA
+POLC3
+0121
+csavarok; elektromosság; fugázó gumik
+LÁDA
+SATUPAD
