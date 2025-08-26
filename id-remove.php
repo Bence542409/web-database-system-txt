@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="post">
                 <label for="delete_id">ID:</label>
                 <input type="text" id="delete_id" name="delete_id">
-                <button type="submit">Delete a record</button>
+                <button type="submit">Delete record</button>
             </form>
         </div>
 
