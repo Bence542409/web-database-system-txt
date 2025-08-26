@@ -19,52 +19,60 @@ if (!empty($lines)) {
 $newId = $lastId + 1;
 $newIdFormatted = str_pad($newId, 4, "0", STR_PAD_LEFT);
 
-// Ha POST űrlap érkezett
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// --- ÚJ ADAT HOZZÁADÁSA ---
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['upload_btn'])) {
     $tartalom = trim($_POST['tartalom'] ?? '');
     $tipus = trim($_POST['tipus'] ?? '');
     $hely = trim($_POST['hely'] ?? '');
 
     if ($tartalom && $tipus && $hely) {
-        // Új blokk összeállítása (az utolsó mező után nincs \n)
         $newEntry = $newIdFormatted . "\n" . $tartalom . "\n" . $tipus . "\n" . $hely;
 
-        // Ha a fájl nem üres, sortörést teszünk csak az új blokk elejére
         if (!empty($lines)) {
             $newEntry = "\n" . $newEntry;
         }
 
         file_put_contents($file, $newEntry, FILE_APPEND);
 
-        $_SESSION['msg'] = [
-            'type' => 'success',
-            'text' => "Azonosító sikeresen hozzáadva (ID: {$newIdFormatted})"
-        ];
-    } else {
-        $_SESSION['msg'] = [
-            'type' => 'error',
-            'text' => "Sikertelen művelet"
-        ];
-    }
-    
-    $qrData = "https://garazs.nemeth-bence.com/id.html?" . $newIdFormatted;
-$qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" . urlencode($qrData);
+        // QR kód generálása
+        $qrData = "https://garazs.nemeth-bence.com/id.html?" . $newIdFormatted;
+        $qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" . urlencode($qrData);
 
-// Mappa létrehozása, ha nincs
-$qrDir = __DIR__ . "/barcode/";
-if (!is_dir($qrDir)) {
-    mkdir($qrDir, 0777, true);
+        $qrDir = __DIR__ . "/barcode/";
+        if (!is_dir($qrDir)) {
+            mkdir($qrDir, 0777, true);
+        }
+
+        $qrFile = $qrDir . $newIdFormatted . ".png";
+        file_put_contents($qrFile, file_get_contents($qrUrl));
+
+        // Jelzés, hogy most kell képet feltölteni
+        $_SESSION['new_id'] = $newIdFormatted;
+    } else {
+        $_SESSION['msg'] = ['type' => 'error', 'text' => "Sikertelen művelet"];
+    }
 }
 
-// Mentés PNG fájlba
-$qrFile = $qrDir . $newIdFormatted . ".png";
-file_put_contents($qrFile, file_get_contents($qrUrl));
+// --- KÉP FELTÖLTÉS ---
+if (isset($_POST['upload_btn']) && isset($_SESSION['new_id'])) {
+    $uploadId = $_SESSION['new_id'];
+    $pictureDir = __DIR__ . "/picture/";
 
+    if (!is_dir($pictureDir)) {
+        mkdir($pictureDir, 0777, true);
+    }
 
-    // JavaScriptes redirect miatt jelző változó
-    $_SESSION['redirect'] = true;
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
+    if (isset($_FILES['picture']) && $_FILES['picture']['error'] === UPLOAD_ERR_OK) {
+        $tmpName = $_FILES['picture']['tmp_name'];
+        $destFile = $pictureDir . $uploadId . ".png";
+
+        move_uploaded_file($tmpName, $destFile);
+
+        $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító és kép sikeresen hozzáadva (ID: {$uploadId})"];
+        unset($_SESSION['new_id']); // Töröljük a jelzőt
+    } else {
+        $_SESSION['msg'] = ['type' => 'error', 'text' => "Kép feltöltése sikertelen"];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -171,21 +179,29 @@ file_put_contents($qrFile, file_get_contents($qrUrl));
     <div class="wrapper">
         <div class="container">
             <h1>Azonosító hozzáadása</h1>
-            <div class="next-id">Tároló azonosítója: <?php echo $newIdFormatted; ?></div>
+            <?php if (isset($_SESSION['new_id'])): ?>
+                <div class="next-id">Kép feltöltése ehhez az ID-hez: <?php echo $_SESSION['new_id']; ?></div>
+                <form method="post" enctype="multipart/form-data">
+                    <label for="picture">Válassz képet:</label>
+                    <input type="file" id="picture" name="picture" accept="image/*">
+                    <button type="submit" name="upload_btn">Kép feltöltése</button>
+                </form>
+            <?php else: ?>
+                <div class="next-id">Tároló azonosítója: <?php echo $newIdFormatted; ?></div>
+                <form method="post">
+                    <label for="tartalom">Tárolóban található elemek:</label>
+                    <input type="text" id="tartalom" name="tartalom">
 
-            <form method="post">
-                <label for="tartalom">Tárolóban található elemek:</label>
-                <input type="text" id="tartalom" name="tartalom">
+                    <label for="tipus">Tároló típusa:</label>
+                    <input type="text" id="tipus" name="tipus">
 
-                <label for="tipus">Tároló típusa:</label>
-                <input type="text" id="tipus" name="tipus">
+                    <label for="hely">Tároló helye:</label>
+                    <input type="text" id="hely" name="hely">
 
-                <label for="hely">Tároló helye:</label>
-                <input type="text" id="hely" name="hely">
-
-                <button type="submit">Azonosító hozzáadása</button>
-            </form>
-        </div> <!-- .container vége -->
+                    <button type="submit">Azonosító hozzáadása</button>
+                </form>
+            <?php endif; ?>
+        </div>
 
         <?php if (!empty($_SESSION['msg'])): ?>
             <div class="msg <?php echo $_SESSION['msg']['type']; ?>">
@@ -193,17 +209,6 @@ file_put_contents($qrFile, file_get_contents($qrUrl));
             </div>
             <?php unset($_SESSION['msg']); ?>
         <?php endif; ?>
-    </div> <!-- .wrapper vége -->
-
-    <?php if (!empty($_SESSION['redirect'])): ?>
-        <script>
-            setTimeout(() => {
-                window.location.href = "<?php echo $_SERVER['PHP_SELF']; ?>";
-            }, 3000);
-        </script>
-        <?php unset($_SESSION['redirect']); ?>
-    <?php endif; ?>
-    
-    
+    </div>
 </body>
 </html>
