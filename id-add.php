@@ -46,6 +46,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'text' => "Sikertelen művelet"
         ];
     }
+    
+    $qrData = "https://garazs.nemeth-bence.com/id.html?" . $newIdFormatted;
+$qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" . urlencode($qrData);
+
+// Mappa létrehozása, ha nincs
+$qrDir = __DIR__ . "/barcode/";
+if (!is_dir($qrDir)) {
+    mkdir($qrDir, 0777, true);
+}
+
+// Mentés PNG fájlba
+$qrFile = $qrDir . $newIdFormatted . ".png";
+file_put_contents($qrFile, file_get_contents($qrUrl));
+
 
     // JavaScriptes redirect miatt jelző változó
     $_SESSION['redirect'] = true;
