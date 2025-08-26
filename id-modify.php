@@ -45,7 +45,7 @@ if (isset($_POST['modify'])) {
     if ($modifyId === '' || $tartalom === '' || $tipus === '' || $hely === '') {
         $_SESSION['msg'] = [
             'type' => 'error',
-            'text' => "Failed operation"
+            'text' => "Sikertelen művelet"
         ];
     } else {
         $lines = file($file, FILE_IGNORE_NEW_LINES);
@@ -68,12 +68,12 @@ if (isset($_POST['modify'])) {
             file_put_contents($file, implode("\n", $lines));
             $_SESSION['msg'] = [
                 'type' => 'success',
-                'text' => "Record succesfully added (ID: {$modifyId})"
+                'text' => "Azonosító sikeresen módosítva (ID: {$modifyId})"
             ];
         } else {
             $_SESSION['msg'] = [
                 'type' => 'error',
-                'text' => "Record not found"
+                'text' => "Nem létezik a megadott azonosítószám"
             ];
         }
     }
@@ -88,7 +88,7 @@ if (isset($_POST['modify'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modify a record - TXT Database System</title>
+    <title>Azonosító módosítása - Garázs Szelektáló Rendszer v3.1</title>
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -196,22 +196,22 @@ if (isset($_POST['modify'])) {
 <body>
 <div class="wrapper">
     <div class="container">
-        <h1>Modify a record</h1>
+        <h1>Azonosító módosítása</h1>
 
         <form method="post" id="modifyForm">
-            <label for="modify_id">ID:</label>
+            <label for="modify_id">Azonosító:</label>
             <input type="text" id="modify_id" name="modify_id" autocomplete="off">
 
-            <label for="tartalom">Record contents:</label>
+            <label for="tartalom">Tárolóban található elemek:</label>
             <input type="text" id="tartalom" name="tartalom">
 
-            <label for="tipus">Record type:</label>
+            <label for="tipus">Tároló típusa:</label>
             <input type="text" id="tipus" name="tipus">
 
-            <label for="hely">Record location:</label>
+            <label for="hely">Tároló helye:</label>
             <input type="text" id="hely" name="hely">
 
-            <button type="submit" name="modify">Modify record</button>
+            <button type="submit" name="modify">Azonosító módosítása</button>
         </form>
     </div>
 
@@ -259,7 +259,7 @@ modifyIdInput.addEventListener('input', () => {
                     tartalomInput.value = '';
                     tipusInput.value = '';
                     helyInput.value = '';
-                    ajaxMsg.innerHTML = '<div class="msg error">Record not found</div>';
+                    ajaxMsg.innerHTML = '<div class="msg error">Nem létezik a megadott azonosítószám</div>';
                 }
             });
     }, 300); // 300ms késleltetés
@@ -267,4 +267,3 @@ modifyIdInput.addEventListener('input', () => {
 </script>
 </body>
 </html>
-

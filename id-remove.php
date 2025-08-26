@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $deleteId = trim($_POST['delete_id'] ?? '');
 
     if ($deleteId === '') {
-        $_SESSION['msg'] = ['type' => 'error', 'text' => "Failed operation"];
+        $_SESSION['msg'] = ['type' => 'error', 'text' => "Sikertelen művelet"];
     } else {
         $lines = file($file, FILE_IGNORE_NEW_LINES);
         $deleteId = ltrim($deleteId, "0");
@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($found) {
             file_put_contents($file, implode("\n", $newLines));
-            $_SESSION['msg'] = ['type' => 'success', 'text' => "Record succesfully deleted (ID: {$deleteId})"];
+            $_SESSION['msg'] = ['type' => 'success', 'text' => "Azonosító sikeresen törölve (ID: {$deleteId})"];
         } else {
-            $_SESSION['msg'] = ['type' => 'error', 'text' => "Record not found"];
+            $_SESSION['msg'] = ['type' => 'error', 'text' => "Nem létezik a megadott azonosítószám"];
         }
     }
 
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete a record - TXT Database System</title>
+    <title>Azonosító törlése - Garázs Szelektáló Rendszer v3.1</title>
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -135,11 +135,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="wrapper">
         <div class="container">
-            <h1>Delete a record</h1>
+            <h1>Azonosító törlése</h1>
             <form method="post">
-                <label for="delete_id">ID:</label>
+                <label for="delete_id">Azonosító:</label>
                 <input type="text" id="delete_id" name="delete_id">
-                <button type="submit">Delete record</button>
+                <button type="submit">Azonosító törlése</button>
             </form>
         </div>
 
