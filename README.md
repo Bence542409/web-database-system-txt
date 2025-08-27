@@ -1,5 +1,5 @@
 # web-txt-database-system
-<p>Suitable for wharehouse use.</p>
+<p>Suitable for warehouse use.</p>
 <br />
 <p>This program allows you to:</p>
 <ul>
