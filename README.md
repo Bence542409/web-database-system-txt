@@ -8,6 +8,7 @@
   <li>check your record data</li>
   <li>upload images to records</li>
   <li>automatically gerenates a QR code to records when added</li>
+  <li>password protect the modification tools (default: admin - admin)</li>
 </ul>
 <br />
 <p>The records must be stored in a txt file in the same directory on a web server.</p>
