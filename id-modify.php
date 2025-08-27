@@ -104,7 +104,7 @@ if (isset($_POST['modify'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azonosító módosítása - Garázs Szelektáló Rendszer v3.1</title>
+    <title>Azonosító módosítása</title>
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>

@@ -19,7 +19,7 @@ if (file_exists($file)) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kulcsszó szerinti keresés - Garázs Szelektáló Rendszer v3.1</title>
+<title>Kulcsszó szerinti keresés</title>
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 <style>
 * { box-sizing: border-box; }

@@ -33,7 +33,7 @@ $lastModified = date("Y-m-d H:i:s", filemtime($file));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adatok - Garázs Szelektáló Rendszer v3.1</title>
+    <title>Adatok</title>
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>

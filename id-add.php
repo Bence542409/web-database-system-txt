@@ -105,7 +105,7 @@ if (isset($_POST['skip_btn']) && isset($_SESSION['new_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azonosító hozzáadása - Garázs Szelektáló Rendszer v3.1</title>
+    <title>Azonosító hozzáadása</title>
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
