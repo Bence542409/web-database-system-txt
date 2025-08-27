@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azonosító keresés</title>
+<title>Azonosító szerinti keresés - Garázs Szelektáló Rendszer v3.1</title>
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="1.css">
 <link rel="shortcut icon" href="favicon.ico" />
@@ -103,7 +103,7 @@ button:hover { background: #005fa3; }
 <body>
 <div class="wrapper" style="width:100%; max-width:420px; margin:0 auto;">
     <div class="container">
-        <h1>Azonosító keresés</h1>
+        <h1>Azonosító szerinti keresés</h1>
         <form method="post">
             <input type="text" id="id" name="id" inputmode="numeric" pattern="[0-9]*">
             <button type="submit">Ugrás</button>
