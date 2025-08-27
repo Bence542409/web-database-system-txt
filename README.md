@@ -6,6 +6,8 @@
   <li>create delete or modify records (id, content, type, place)</li>
   <li>search for records</li>
   <li>check your record data</li>
+  <li>upload images to records</li>
+  <li>automatically gerenates a QR code to records when added</li>
 </ul>
 <br />
 <p>The records must be stored in a txt file in the same directory on a web server.</p>
