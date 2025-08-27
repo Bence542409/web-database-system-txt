@@ -37,35 +37,47 @@ $lastModified = date("Y-m-d H:i:s", filemtime($file));
     <link rel="stylesheet" type="text/css" href="1.css">
     <link rel="shortcut icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <style>       
-        body {
-            font-family: 'Roboto', sans-serif;
-            padding: 2rem;
-        }
+    <style>  
+    /* --- Alap beállítások --- */
+    * {
+        box-sizing: border-box;
+    }
+            
+    body {
+        font-family: 'Roboto', sans-serif;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        margin: 0;
+    }
 
-        .container {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            width: 100%;
-            max-width: 420px;
-            margin: auto;
-        }
+    .container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        width: 100%;
+        max-width: 420px;
+    }
 
-        h1 {
-            text-align: center;
-            color: black;
-            margin-bottom: 1.5rem;
-        }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 1.4rem;
+    }
 
-        p {
-            font-size: 1rem;
-            margin: 0.6rem 0;
-            color: black;
-        }
+    p {
+        font-size: 0.95rem;
+        margin: 0.6rem 0;
+        color: #333;
+        line-height: 1.5;
+    }
+
 </style>
+
 </head>
 <body>
     <div class="container">
@@ -73,7 +85,7 @@ $lastModified = date("Y-m-d H:i:s", filemtime($file));
         <p><strong>Eltárolt azonosítók száma:</strong> <?php echo (int)$totalIds; ?></p>
         <p><strong>Üres tárolók száma:</strong> <?php echo $ures; ?></p>
         <p><strong>Ismeretlen tárolók száma:</strong> <?php echo $ismeretlen; ?></p>
-        <p><strong>Utolsó módosítás:</strong> <?php echo $lastModified; ?></p>
+        <p><strong>Módosítás:</strong> <?php echo $lastModified; ?></p>
     </div>
 </body>
 </html>

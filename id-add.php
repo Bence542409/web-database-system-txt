@@ -1,4 +1,19 @@
 <?php
+
+// Felhasználónév és jelszó
+$USERNAME = 'admin';
+$PASSWORD = 'admin';
+
+// Ellenőrizzük, hogy van-e bejelentkezés
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
+    $_SERVER['PHP_AUTH_USER'] !== $USERNAME || $_SERVER['PHP_AUTH_PW'] !== $PASSWORD) {
+
+    header('WWW-Authenticate: Basic realm="Biztonságos terület"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo '<script>alert("Hozzáférés megtagadva"); window.history.back();</script>';
+    exit;
+}
+
 session_start();
 
 $file = __DIR__ . "/id.txt";
