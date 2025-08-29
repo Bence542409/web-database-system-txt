@@ -17,5 +17,14 @@
         <p>Tároló vonalkódja: <span id="barcode"></span></p>
         <!-- <p>Tároló vonalkódja: <a href="barcode/qr.png">QR KÓD</a></p> -->
         <p>Utóljára módosítva: <span id="modified"></span></p>
+        <script>
+document.addEventListener("keydown", function(e) {
+    // csak akkor reagáljon, ha nem űrlap mezőben írunk
+    if (e.key === "Backspace" && !["INPUT", "TEXTAREA"].includes(e.target.tagName)) {
+        e.preventDefault(); // ne töröljön szöveget
+        history.back();     // menjen vissza az előző oldalra
+    }
+});
+</script>
     </body>
 </html>

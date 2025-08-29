@@ -204,5 +204,14 @@ header {
         ?>
     </div>
 </div>
+    <script>
+document.addEventListener("keydown", function(e) {
+    // csak akkor reagáljon, ha nem űrlap mezőben írunk
+    if (e.key === "Backspace" && !["INPUT", "TEXTAREA"].includes(e.target.tagName)) {
+        e.preventDefault(); // ne töröljön szöveget
+        history.back();     // menjen vissza az előző oldalra
+    }
+});
+</script>
 </body>
 </html>
